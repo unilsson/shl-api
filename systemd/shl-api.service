@@ -6,8 +6,8 @@ Wants=network-online.target
 [Service]
 Type=simple
 User=unilsson
-WorkingDirectory=/home/unilsson/Development/shl-api
-ExecStart=/home/unilsson/Development/shl-api/.venv/bin/uvicorn app:app --host 0.0.0.0 --port 8093
+WorkingDirectory=/opt/shl-api
+ExecStart=/opt/shl-api/.venv/bin/uvicorn app:app --host 0.0.0.0 --port 21967
 Restart=on-failure
 RestartSec=5
 Environment=PYTHONUNBUFFERED=1
