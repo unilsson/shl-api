@@ -1,6 +1,6 @@
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -19,22 +19,31 @@ BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
 
 
-def env_path(name: str, default: Path) -> Path:
+def require_env(name: str) -> str:
     """
-    Läs en sökväg från en miljövariabel.
+    Läs en obligatorisk miljövariabel.
 
-    Relativa paths räknas från katalogen där app.py ligger.
-    Exempel:
-        SHL_DATA_DIR=./data
-    blir:
-        /home/user/Development/shl-api/data
+    Appen ska inte innehålla miljöspecifika fallbackvärden.
+    All konfiguration ligger i .env.
     """
     value = os.getenv(name)
 
-    if not value:
-        return default.resolve()
+    if value is None or not value.strip():
+        raise RuntimeError(
+            f"Obligatorisk konfiguration saknas: {name}. "
+            "Skapa .env från .env.example och fyll i värdet."
+        )
 
-    path = Path(value).expanduser()
+    return value.strip()
+
+
+def env_path(name: str) -> Path:
+    """
+    Läs en obligatorisk sökväg från miljön.
+
+    Relativa paths räknas från katalogen där app.py ligger.
+    """
+    path = Path(require_env(name)).expanduser()
 
     if not path.is_absolute():
         path = BASE_DIR / path
@@ -42,49 +51,23 @@ def env_path(name: str, default: Path) -> Path:
     return path.resolve()
 
 
-SHL_URL = os.getenv(
-    "SHL_URL",
-    "https://www.shl.se/api/sports-v2/game-schedule",
-)
+SHL_URL = require_env("SHL_URL")
+SHL_SEASON_UUID = require_env("SHL_SEASON_UUID")
+SHL_SERIES_UUID = require_env("SHL_SERIES_UUID")
+SHL_GAME_TYPE_UUID = require_env("SHL_GAME_TYPE_UUID")
+SHL_GAME_PLACE = require_env("SHL_GAME_PLACE")
+SHL_PLAYED = require_env("SHL_PLAYED")
 
-SHL_SEASON_UUID = os.getenv(
-    "SHL_SEASON_UUID",
-    "ndcf81nlb3",
-)
+DATA_DIR = env_path("SHL_DATA_DIR")
+CACHE_FILE = env_path("SHL_CACHE_FILE")
 
-SHL_SERIES_UUID = os.getenv(
-    "SHL_SERIES_UUID",
-    "qQ9-bb0bzEWUk",
-)
-
-SHL_GAME_TYPE_UUID = os.getenv(
-    "SHL_GAME_TYPE_UUID",
-    "qQ9-af37Ti40B",
-)
-
-SHL_MIN_GAMES = int(
-    os.getenv(
-        "SHL_MIN_GAMES",
-        "300",
-    )
-)
-
-DATA_DIR = env_path(
-    "SHL_DATA_DIR",
-    BASE_DIR / "data",
-)
-
-CACHE_FILE = env_path(
-    "SHL_CACHE_FILE",
-    DATA_DIR / "schedule.json",
-)
-
-TIMEZONE_NAME = os.getenv(
-    "SHL_TIMEZONE",
-    "Europe/Stockholm",
-)
-
+TIMEZONE_NAME = require_env("SHL_TIMEZONE")
 LOCAL_TZ = ZoneInfo(TIMEZONE_NAME)
+
+SHL_MIN_GAMES = int(require_env("SHL_MIN_GAMES"))
+SHL_REQUEST_TIMEOUT = float(require_env("SHL_REQUEST_TIMEOUT"))
+SHL_USER_AGENT = require_env("SHL_USER_AGENT")
+API_ROOT_PATH = require_env("API_ROOT_PATH")
 
 
 # ============================================================
@@ -95,7 +78,7 @@ app = FastAPI(
     title="SHL API",
     description="Lokalt cache-API för SHL:s spelschema",
     version="1.0.0",
-    root_path="/api/shl",
+    root_path=API_ROOT_PATH,
 )
 
 
@@ -184,7 +167,8 @@ def parse_game_start(game: dict) -> datetime | None:
     """
     Tolka SHL:s starttid.
 
-    Om SHL returnerar en tid utan timezone antar vi Europe/Stockholm.
+    Om SHL returnerar en tid utan timezone antar vi den timezone som
+    är konfigurerad i SHL_TIMEZONE.
     """
 
     value = (
@@ -229,7 +213,6 @@ def serialize_game(game: dict) -> dict:
     """
 
     start = parse_game_start(game)
-
     venue = game.get("venueInfo") or {}
 
     result = {
@@ -298,10 +281,7 @@ def health():
 @app.get("/config")
 def config():
     """
-    Visa aktiv konfiguration.
-
-    Inga credentials finns i denna tjänst, så informationen är
-    avsiktligt tillgänglig för felsökning på det interna nätet.
+    Visa aktiv, icke-hemlig konfiguration för felsökning.
     """
 
     return {
@@ -312,8 +292,12 @@ def config():
         "season_uuid": SHL_SEASON_UUID,
         "series_uuid": SHL_SERIES_UUID,
         "game_type_uuid": SHL_GAME_TYPE_UUID,
+        "game_place": SHL_GAME_PLACE,
+        "played": SHL_PLAYED,
         "timezone": TIMEZONE_NAME,
         "minimum_games": SHL_MIN_GAMES,
+        "request_timeout": SHL_REQUEST_TIMEOUT,
+        "api_root_path": API_ROOT_PATH,
     }
 
 
@@ -358,16 +342,11 @@ def status():
 @app.get("/next-round")
 def next_round():
     """
-    Returnera nästa SHL-omgång.
+    Returnera den omgång som den närmaste framtida matchen tillhör.
 
-    Algoritm:
-
-    1. Hitta första framtida pre-game-match.
-    2. Läs matchens roundNumber.
-    3. Returnera samtliga matcher som tillhör den omgången.
-
-    Detta är viktigt eftersom uppskjutna matcher från tidigare
-    omgångar annars skulle kunna göra att fel omgång väljs.
+    Observera att uppskjutna matcher kan göra att en omgång innehåller
+    matcher på vitt skilda datum. För en tittarvänlig lista bör /matches
+    användas i stället.
     """
 
     data = load_schedule()
@@ -452,10 +431,11 @@ def upcoming(
         default=10,
         ge=1,
         le=100,
+        description="Maximalt antal kommande matcher",
     ),
 ):
     """
-    Returnera kommande matcher sorterade på starttid.
+    Returnera de närmaste kommande matcherna sorterade på starttid.
     """
 
     data = load_schedule()
@@ -480,6 +460,54 @@ def upcoming(
     }
 
 
+@app.get("/matches")
+def matches_within_days(
+    days: int = Query(
+        default=7,
+        ge=1,
+        le=60,
+        description="Antal dagar framåt som matcher ska hämtas",
+    ),
+):
+    """
+    Returnera alla ännu ospelade SHL-matcher från nu och angivet
+    antal dagar framåt, oberoende av omgång.
+    """
+
+    data = load_schedule()
+    games = get_games(data)
+
+    now = datetime.now(LOCAL_TZ)
+    end_time = now + timedelta(days=days)
+
+    selected_games = []
+
+    for game in games:
+        start = parse_game_start(game)
+
+        if start is None:
+            continue
+
+        if (
+            now <= start <= end_time
+            and str(game.get("state", "")).lower() == "pre-game"
+        ):
+            selected_games.append(game)
+
+    selected_games.sort(key=game_sort_key)
+
+    return {
+        "days": days,
+        "from": now.isoformat(),
+        "to": end_time.isoformat(),
+        "count": len(selected_games),
+        "matches": [
+            serialize_game(game)
+            for game in selected_games
+        ],
+    }
+
+
 @app.post("/refresh")
 def refresh():
     """
@@ -492,13 +520,13 @@ def refresh():
         "seasonUuid": SHL_SEASON_UUID,
         "seriesUuid": SHL_SERIES_UUID,
         "gameTypeUuid": SHL_GAME_TYPE_UUID,
-        "gamePlace": "all",
-        "played": "all",
+        "gamePlace": SHL_GAME_PLACE,
+        "played": SHL_PLAYED,
     }
 
     headers = {
         "Accept": "application/json",
-        "User-Agent": "shl-api/1.0",
+        "User-Agent": SHL_USER_AGENT,
     }
 
     try:
@@ -506,7 +534,7 @@ def refresh():
             SHL_URL,
             params=params,
             headers=headers,
-            timeout=30,
+            timeout=SHL_REQUEST_TIMEOUT,
         )
 
         response.raise_for_status()
@@ -576,8 +604,8 @@ def refresh():
                 indent=2,
             )
 
-        # Atomärt byte:
-        # den gamla filen försvinner först när den nya är helt skriven.
+        # Atomärt byte: den gamla filen ersätts först när den nya
+        # är helt nedskriven och validerad.
         tmp_file.replace(CACHE_FILE)
 
     except OSError as exc:
@@ -604,4 +632,3 @@ def refresh():
         "updated": datetime.now(LOCAL_TZ).isoformat(),
         "cache_file": str(CACHE_FILE),
     }
-
