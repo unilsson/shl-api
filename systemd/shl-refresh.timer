@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily SHL schedule refresh
+
+[Timer]
+OnCalendar=*-*-* 04:15:00
+Persistent=true
+Unit=shl-refresh.service
+
+[Install]
+WantedBy=timers.target
