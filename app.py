@@ -460,6 +460,68 @@ def upcoming(
     }
 
 
+@app.get("/next-matchday")
+def next_matchday():
+    """
+    Returnera samtliga ännu ospelade matcher på nästa kalenderdag
+    som har SHL-matcher.
+
+    Exempel:
+    Om nästa framtida match spelas på torsdag returneras alla
+    pre-game-matcher på torsdagen, men inga matcher från senare dagar.
+
+    Urvalet baseras på faktisk lokal starttid och påverkas inte av
+    omgångsnummer.
+    """
+
+    data = load_schedule()
+    games = get_games(data)
+
+    upcoming_games = [
+        game
+        for game in games
+        if is_upcoming(game)
+    ]
+
+    if not upcoming_games:
+        raise HTTPException(
+            status_code=404,
+            detail="Inga kommande SHL-matcher hittades.",
+        )
+
+    upcoming_games.sort(key=game_sort_key)
+
+    first_start = parse_game_start(upcoming_games[0])
+
+    if first_start is None:
+        raise HTTPException(
+            status_code=500,
+            detail="Kunde inte läsa starttiden för nästa match.",
+        )
+
+    match_date = first_start.date()
+
+    matchday_games = [
+        game
+        for game in upcoming_games
+        if (
+            parse_game_start(game) is not None
+            and parse_game_start(game).date() == match_date
+        )
+    ]
+
+    matchday_games.sort(key=game_sort_key)
+
+    return {
+        "date": match_date.isoformat(),
+        "count": len(matchday_games),
+        "matches": [
+            serialize_game(game)
+            for game in matchday_games
+        ],
+    }
+
+
 @app.get("/matches")
 def matches_within_days(
     days: int = Query(
