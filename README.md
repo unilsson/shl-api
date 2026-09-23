@@ -166,8 +166,9 @@ Den gamla cachefilen behålls om hämtningen eller valideringen misslyckas.
 
 ## Lagloggor
 
-API:t kan hämta SHL-lagets loggor från SHL:s egen tabellsida och lagra dem
-lokalt under den runtime-katalog som anges av `SHL_LOGO_DIR`.
+API:t hämtar SHL-lagens loggor direkt från Sportality-CDN med en explicit
+mapping för de 14 aktuella SHL-lagen och lagrar dem lokalt under den
+runtime-katalog som anges av `SHL_LOGO_DIR`.
 
 Loggorna versionshanteras inte i Git. De blir i stället en lokal del av den
 körande API-instansen och serveras under:
@@ -219,7 +220,7 @@ Alla miljöspecifika värden finns i `.env`. Repot innehåller endast
 Konfigurerbara värden:
 
 - `SHL_URL`
-- `SHL_TEAMS_URL`
+- `SHL_LOGO_BASE_URL`
 - `SHL_SEASON_UUID`
 - `SHL_SERIES_UUID`
 - `SHL_GAME_TYPE_UUID`
