@@ -553,7 +553,7 @@ def is_upcoming(game: dict) -> bool:
 def root():
     return {
         "service": "SHL API",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "status": "ok",
     }
 
