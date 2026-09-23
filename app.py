@@ -9,7 +9,7 @@ from zoneinfo import ZoneInfo
 import requests
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
-from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 
 # ============================================================
@@ -108,11 +108,6 @@ app = FastAPI(
     root_path=API_ROOT_PATH,
 )
 
-app.mount(
-    "/logos",
-    StaticFiles(directory=str(LOGO_DIR)),
-    name="logos",
-)
 
 
 # ============================================================
@@ -808,6 +803,36 @@ def matches_within_days(
             for game in selected_games
         ],
     }
+
+
+@app.get("/logos/{filename}")
+def logo_file(filename: str):
+    """
+    Servera en lokalt cachad SVG-logga.
+
+    En vanlig FastAPI-route används i stället för StaticFiles för att
+    fungera stabilt bakom reverse proxy med API_ROOT_PATH.
+    """
+
+    if not filename.endswith(".svg"):
+        raise HTTPException(
+            status_code=404,
+            detail="Loggan hittades inte.",
+        )
+
+    requested = (LOGO_DIR / filename).resolve()
+
+    if requested.parent != LOGO_DIR.resolve() or not requested.is_file():
+        raise HTTPException(
+            status_code=404,
+            detail="Loggan hittades inte.",
+        )
+
+    return FileResponse(
+        requested,
+        media_type="image/svg+xml",
+        filename=filename,
+    )
 
 
 @app.get("/teams")
