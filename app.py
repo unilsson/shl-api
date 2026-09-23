@@ -4,11 +4,9 @@ import re
 import unicodedata
 from datetime import datetime, timedelta
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
 from zoneinfo import ZoneInfo
 
 import requests
-from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.staticfiles import StaticFiles
@@ -72,13 +70,31 @@ LOCAL_TZ = ZoneInfo(TIMEZONE_NAME)
 SHL_MIN_GAMES = int(require_env("SHL_MIN_GAMES"))
 SHL_REQUEST_TIMEOUT = float(require_env("SHL_REQUEST_TIMEOUT"))
 SHL_USER_AGENT = require_env("SHL_USER_AGENT")
-SHL_TEAMS_URL = require_env("SHL_TEAMS_URL")
+SHL_LOGO_BASE_URL = require_env("SHL_LOGO_BASE_URL").rstrip("/")
 LOGO_DIR = env_path("SHL_LOGO_DIR")
 LOGO_INDEX_FILE = LOGO_DIR / "index.json"
 PUBLIC_BASE_URL = require_env("PUBLIC_BASE_URL").rstrip("/")
 API_ROOT_PATH = require_env("API_ROOT_PATH")
 
 LOGO_DIR.mkdir(parents=True, exist_ok=True)
+
+
+TEAM_LOGO_SLUGS = {
+    "Björklöven": "ifb1_ifb",
+    "Brynäs IF": "bif1_bif",
+    "Djurgården Hockey Herr": "dif1_dif",
+    "Frölunda HC": "fhc1_fhc",
+    "Färjestad BK": "fbk1_fbk",
+    "HV71": "hv711_hv71",
+    "Linköping HC": "lhc1_lhc",
+    "Luleå Hockey": "lhf1_lhf",
+    "Malmö Redhawks": "mif1_mif",
+    "Rögle BK": "rbk1_rbk",
+    "Skellefteå AIK": "saik1_saik",
+    "Timrå IK": "tik1_tik",
+    "Växjö Lakers": "vlh1_vlh",
+    "Örebro Hockey": "ohk1_ohk",
+}
 
 
 # ============================================================
@@ -88,7 +104,7 @@ LOGO_DIR.mkdir(parents=True, exist_ok=True)
 app = FastAPI(
     title="SHL API",
     description="Lokalt cache-API för SHL:s spelschema",
-    version="1.1.0",
+    version="1.1.1",
     root_path=API_ROOT_PATH,
 )
 
@@ -287,112 +303,48 @@ def local_logo_url(team: str) -> str | None:
     return f"{PUBLIC_BASE_URL}/logos/{filename}"
 
 
-def image_source_from_tag(image) -> str | None:
-    """
-    Hämta bästa bild-URL från ett img-element.
-    """
-
-    for attribute in ("src", "data-src", "data-lazy-src"):
-        value = image.get(attribute)
-
-        if value:
-            return str(value).strip()
-
-    srcset = image.get("srcset")
-
-    if srcset:
-        first = str(srcset).split(",")[0].strip().split(" ")[0]
-
-        if first:
-            return first
-
-    return None
-
-
 def discover_team_logo_sources(expected_teams: set[str]) -> dict:
     """
-    Läs SHL:s tabellsida och hitta logo-URL för aktuella lag.
+    Bygg käll-URL:er direkt från Sportality-sluggar.
 
-    SHL:s tabell renderar lagloggor som bilder med alt-text på formen
-    "<lagnamn> logo". Vi använder endast lag som faktiskt förekommer
-    i den lokala schemacachen.
+    Mappingen är explicit eftersom SHL:s tabellsida renderas klient-side
+    och därför inte är lämplig att skrapa server-side.
     """
 
-    headers = {
-        "Accept": "text/html,application/xhtml+xml",
-        "User-Agent": SHL_USER_AGENT,
-    }
-
-    try:
-        response = requests.get(
-            SHL_TEAMS_URL,
-            headers=headers,
-            timeout=SHL_REQUEST_TIMEOUT,
-        )
-        response.raise_for_status()
-    except requests.RequestException as exc:
-        raise RuntimeError(f"Kunde inte hämta SHL:s lagsida: {exc}") from exc
-
-    soup = BeautifulSoup(response.text, "html.parser")
-    expected_by_casefold = {
-        team.casefold(): team
+    return {
+        team: f"{SHL_LOGO_BASE_URL}/{TEAM_LOGO_SLUGS[team]}.svg"
         for team in expected_teams
+        if team in TEAM_LOGO_SLUGS
     }
 
-    discovered = {}
 
-    for image in soup.find_all("img"):
-        alt = str(image.get("alt") or "").strip()
-
-        if not alt.lower().endswith(" logo"):
-            continue
-
-        displayed_name = alt[:-5].strip()
-        canonical_name = expected_by_casefold.get(displayed_name.casefold())
-
-        if not canonical_name:
-            continue
-
-        source = image_source_from_tag(image)
-
-        if not source:
-            continue
-
-        absolute_url = urljoin(SHL_TEAMS_URL, source)
-
-        if urlparse(absolute_url).scheme not in ("http", "https"):
-            continue
-
-        discovered[canonical_name] = absolute_url
-
-    return discovered
-
-
-def logo_extension(response: requests.Response, source_url: str) -> str:
+def validate_svg(response: requests.Response, source_url: str) -> None:
     """
-    Bestäm ett säkert filtillägg från Content-Type eller käll-URL.
+    Kontrollera att svaret ser ut som en SVG-bild.
     """
 
-    content_type = response.headers.get("Content-Type", "").split(";")[0].lower()
-
-    by_content_type = {
-        "image/svg+xml": ".svg",
-        "image/png": ".png",
-        "image/jpeg": ".jpg",
-        "image/webp": ".webp",
-    }
-
-    if content_type in by_content_type:
-        return by_content_type[content_type]
-
-    suffix = Path(urlparse(source_url).path).suffix.lower()
-
-    if suffix in {".svg", ".png", ".jpg", ".jpeg", ".webp"}:
-        return ".jpg" if suffix == ".jpeg" else suffix
-
-    raise RuntimeError(
-        f"Okänt bildformat för {source_url}: {content_type or 'saknas'}"
+    content_type = (
+        response.headers.get("Content-Type", "")
+        .split(";")[0]
+        .strip()
+        .lower()
     )
+
+    body_start = response.content.lstrip()[:512].lower()
+
+    if (
+        content_type not in {
+            "image/svg+xml",
+            "application/svg+xml",
+            "text/xml",
+            "application/xml",
+        }
+        and b"<svg" not in body_start
+    ):
+        raise RuntimeError(
+            f"Ogiltigt loggosvar från {source_url}: "
+            f"{content_type or 'Content-Type saknas'}"
+        )
 
 
 def refresh_team_logos(games: list, force: bool = False) -> dict:
@@ -449,11 +401,9 @@ def refresh_team_logos(games: list, force: bool = False) -> dict:
             )
             response.raise_for_status()
 
-            if not response.headers.get("Content-Type", "").lower().startswith("image/"):
-                raise RuntimeError("svaret är inte en bild")
+            validate_svg(response, source_url)
 
-            extension = logo_extension(response, source_url)
-            filename = f"{slugify_team_name(team)}{extension}"
+            filename = f"{slugify_team_name(team)}.svg"
             target = LOGO_DIR / filename
             tmp_file = target.with_suffix(target.suffix + ".tmp")
 
@@ -553,7 +503,7 @@ def is_upcoming(game: dict) -> bool:
 def root():
     return {
         "service": "SHL API",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "status": "ok",
     }
 
@@ -584,7 +534,7 @@ def config():
         "timezone": TIMEZONE_NAME,
         "minimum_games": SHL_MIN_GAMES,
         "request_timeout": SHL_REQUEST_TIMEOUT,
-        "teams_url": SHL_TEAMS_URL,
+        "logo_base_url": SHL_LOGO_BASE_URL,
         "logo_dir": str(LOGO_DIR),
         "public_base_url": PUBLIC_BASE_URL,
         "api_root_path": API_ROOT_PATH,
@@ -896,7 +846,7 @@ def refresh_logos(
     ),
 ):
     """
-    Hämta lagloggor från SHL:s tabellsida och lagra dem lokalt.
+    Hämta lagloggor från Sportality-CDN och lagra dem lokalt.
     """
 
     data = load_schedule()
