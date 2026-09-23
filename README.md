@@ -183,19 +183,39 @@ Konfigurerbara värden:
 - `SHL_USER_AGENT`
 - `API_ROOT_PATH`
 
+
+## Produktionsadress
+
+API:t publiceras bakom Nginx på:
+
+```text
+https://api.ulnihnw.net/api/shl
+```
+
+Exempel:
+
+```bash
+curl -s https://api.ulnihnw.net/api/shl/health | jq
+curl -s https://api.ulnihnw.net/api/shl/next-matchday | jq
+```
+
+Uvicorn kör internt på port `21967`. Nginx proxar den publika sökvägen
+`/api/shl` till den lokala backend-processen.
+
 ## Köra API:t som systemd-tjänst
 
 Repot innehåller också:
 
 - `systemd/shl-api.service`
 
-Den startar Uvicorn på port `8093` och startar om processen automatiskt vid fel.
+Den startar Uvicorn på den interna backend-porten `21967` och startar om processen automatiskt vid fel.
 
 För nuvarande installation förutsätter unit-filen:
 
 - användare: `unilsson`
-- projektkatalog: `/home/unilsson/Development/shl-api`
-- virtualenv: `/home/unilsson/Development/shl-api/.venv`
+- projektkatalog: `/opt/shl-api`
+- virtualenv: `/opt/shl-api/.venv`
+- intern backend-port: `21967`
 
 Installera:
 
@@ -209,7 +229,7 @@ Kontrollera:
 
 ```bash
 systemctl status shl-api.service
-curl -s http://127.0.0.1:8093/health | jq
+curl -s http://127.0.0.1:21967/health | jq
 ```
 
 Loggar:
@@ -263,8 +283,8 @@ journalctl -u shl-refresh.service -n 50
 ```
 
 Servicefilen förutsätter att API:t nås lokalt på
-`http://127.0.0.1:8093/refresh`. Anpassa filen vid installation om API:t
-kör på en annan port eller adress.
+`http://127.0.0.1:21967/refresh`. Refresh-jobbet går direkt mot den lokala
+Uvicorn-processen och behöver därför inte gå via Nginx, DNS eller HTTPS.
 
 ## Git och lokal data
 
