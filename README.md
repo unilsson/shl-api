@@ -183,6 +183,45 @@ Konfigurerbara värden:
 - `SHL_USER_AGENT`
 - `API_ROOT_PATH`
 
+## Köra API:t som systemd-tjänst
+
+Repot innehåller också:
+
+- `systemd/shl-api.service`
+
+Den startar Uvicorn på port `8093` och startar om processen automatiskt vid fel.
+
+För nuvarande installation förutsätter unit-filen:
+
+- användare: `unilsson`
+- projektkatalog: `/home/unilsson/Development/shl-api`
+- virtualenv: `/home/unilsson/Development/shl-api/.venv`
+
+Installera:
+
+```bash
+sudo cp systemd/shl-api.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now shl-api.service
+```
+
+Kontrollera:
+
+```bash
+systemctl status shl-api.service
+curl -s http://127.0.0.1:8093/health | jq
+```
+
+Loggar:
+
+```bash
+journalctl -u shl-api.service -f
+```
+
+Om projektet installeras på en annan sökväg eller under en annan användare
+måste `User=`, `WorkingDirectory=` och `ExecStart=` i unit-filen
+anpassas innan den kopieras till `/etc/systemd/system/`.
+
 ## Daglig uppdatering med systemd
 
 Repot innehåller färdiga exempel under `systemd/`:
