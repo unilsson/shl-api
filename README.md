@@ -12,6 +12,7 @@ att upprepade gånger belasta SHL:s webb-API.
 - Manuell uppdatering med `POST /refresh`
 - Atomär uppdatering av cachefilen
 - Validering av antalet matcher innan ny cache tas i bruk
+- Nästa matchdag via `/next-matchday`
 - Nästa omgång via `/next-round`
 - Valfri omgång via `/round/{round_number}`
 - Närmaste matcher via `/upcoming?limit=10`
@@ -91,6 +92,25 @@ GET /status
 Visar bland annat antal matcher, antal omgångar och när cachen senast
 uppdaterades.
 
+### Nästa matchdag
+
+```text
+GET /next-matchday
+```
+
+Returnerar alla ännu ospelade matcher på den närmaste kalenderdagen som
+har SHL-matcher. Om nästa matcher exempelvis spelas på torsdag returneras
+endast torsdagens matcher, oberoende av omgångsnummer.
+
+Detta är den rekommenderade endpointen för en Home Assistant-vy som ska visa
+"vad spelas härnäst?".
+
+Exempel:
+
+```bash
+curl -s http://localhost:8093/next-matchday | jq
+```
+
 ### Matcher inom X dagar
 
 ```text
@@ -125,7 +145,7 @@ Returnerar den omgång som den närmaste framtida matchen tillhör.
 
 Observera att uppskjutna eller flyttade matcher kan göra att matcher i samma
 omgång ligger på vitt skilda datum. För en tittarvänlig Home Assistant-vy
-är därför `/matches?days=X` normalt bättre.
+är därför `/next-matchday` normalt bättre för att visa vad som spelas härnäst.
 
 ### Specifik omgång
 
