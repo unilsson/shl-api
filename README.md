@@ -212,6 +212,146 @@ När en logga finns lokalt innehåller matchobjekten dessutom:
 Det gör att Home Assistant kan använda logo-URL:erna direkt utan egen
 mapping mellan lagnamn och bildfiler.
 
+
+## Home Assistant
+
+Den rekommenderade Home Assistant-integrationen använder
+`/next-matchday`. API:t returnerar då alla matcher på nästa kalenderdag
+med SHL-matcher, inklusive lokala URL:er till lagloggorna.
+
+### REST-sensor
+
+Lägg exempelvis följande i Home Assistants YAML-konfiguration:
+
+```yaml
+rest:
+  - resource: "https://api.ulnihnw.net/api/shl/next-matchday"
+    method: GET
+    scan_interval: 300
+    timeout: 10
+
+    sensor:
+      - name: "SHL nästa matchdag"
+        unique_id: shl_next_matchday
+        value_template: "{{ value_json.date }}"
+        json_attributes:
+          - count
+          - matches
+```
+
+Efter ändring av YAML-konfigurationen måste berörd konfiguration laddas om,
+eller Home Assistant startas om.
+
+Sensorn får datumet för nästa matchdag som state och lagrar `count` samt
+hela matchlistan i attributet `matches`.
+
+### Markdown-kort
+
+Följande kort visar nästa matchdag med svensk veckodag och månad, lagloggor,
+matchtid, omgång, arena och ett horisontellt streck mellan matcherna:
+
+```yaml
+type: markdown
+entity_id:
+  - sensor.shl_nasta_matchdag
+
+content: |-
+  {% set matches = state_attr('sensor.shl_nasta_matchdag', 'matches') or [] %}
+  {% set date_string = states('sensor.shl_nasta_matchdag') %}
+
+  {% set weekdays = [
+    'måndag',
+    'tisdag',
+    'onsdag',
+    'torsdag',
+    'fredag',
+    'lördag',
+    'söndag'
+  ] %}
+
+  {% set months = [
+    'januari',
+    'februari',
+    'mars',
+    'april',
+    'maj',
+    'juni',
+    'juli',
+    'augusti',
+    'september',
+    'oktober',
+    'november',
+    'december'
+  ] %}
+
+  {% set team_names = {
+    'Djurgården Hockey Herr': 'Djurgårdens IF'
+  } %}
+
+  {% if matches | count > 0 %}
+  {% set d = strptime(date_string, '%Y-%m-%d') %}
+
+  # 🏒 SHL
+
+  ## {{ weekdays[d.weekday()] | capitalize }} {{ d.day }} {{ months[d.month - 1] }}
+
+  **{{ matches | count }} matcher**
+
+  <table role="presentation" width="100%">
+  {% for m in matches %}
+  {% set home = team_names.get(m['home'], m['home']) %}
+  {% set away = team_names.get(m['away'], m['away']) %}
+
+  <tr>
+  <td width="55" align="center">
+  {% if m['home_logo'] %}
+  <img src="{{ m['home_logo'] }}" width="44">
+  {% endif %}
+  </td>
+  <td><strong>{{ home }}</strong></td>
+  <td width="80" align="center"><strong>{{ m['time'] }}</strong></td>
+  <td align="right"><strong>{{ away }}</strong></td>
+  <td width="55" align="center">
+  {% if m['away_logo'] %}
+  <img src="{{ m['away_logo'] }}" width="44">
+  {% endif %}
+  </td>
+  </tr>
+
+  <tr>
+  <td></td>
+  <td colspan="3" align="center">
+  <small>Omgång {{ m['round'] }}{% if m['venue'] %} · 📍 {{ m['venue'] }}{% endif %}</small>
+  </td>
+  <td></td>
+  </tr>
+
+  {% if not loop.last %}
+  <tr>
+  <td colspan="5"><hr></td>
+  </tr>
+  {% endif %}
+
+  {% endfor %}
+  </table>
+
+  {% else %}
+
+  # 🏒 SHL
+
+  **Inga kommande SHL-matcher**
+
+  {% endif %}
+```
+
+HTML-taggarna i tabellen ska inte indenteras ytterligare i den renderade
+Markdown-texten. Fyra inledande blanksteg gör annars att Markdown tolkar
+HTML-raderna som ett kodblock.
+
+Lagloggorna hämtas från `home_logo` och `away_logo` i API-svaret och
+behöver därför inte mappas separat i Home Assistant.
+
+
 ## Konfiguration
 
 Alla miljöspecifika värden finns i `.env`. Repot innehåller endast
