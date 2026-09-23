@@ -1,0 +1,8 @@
+[Unit]
+Description=Refresh SHL schedule cache
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/curl -fsS -X POST http://127.0.0.1:8093/refresh
