@@ -18,6 +18,7 @@ att upprepade gånger belasta SHL:s webb-API.
 - Närmaste matcher via `/upcoming?limit=10`
 - Matcher inom ett antal dagar via `/matches?days=7`
 - Status och health-endpoints
+- Lokalt cachade lagloggor som serveras av API:t
 - All miljöspecifik konfiguration i lokal `.env`
 
 ## Krav
@@ -162,6 +163,54 @@ POST /refresh
 Hämtar ett nytt komplett spelschema från den konfigurerade SHL-källan.
 Den gamla cachefilen behålls om hämtningen eller valideringen misslyckas.
 
+
+## Lagloggor
+
+API:t kan hämta SHL-lagets loggor från SHL:s egen tabellsida och lagra dem
+lokalt under den runtime-katalog som anges av `SHL_LOGO_DIR`.
+
+Loggorna versionshanteras inte i Git. De blir i stället en lokal del av den
+körande API-instansen och serveras under:
+
+```text
+https://api.ulnihnw.net/api/shl/logos/
+```
+
+Vid en vanlig `POST /refresh` hämtas bara loggor som saknas lokalt.
+Befintliga loggor laddas alltså inte ner på nytt varje dag.
+
+För att tvinga en kontroll/hämtning:
+
+```bash
+curl -s -X POST https://api.ulnihnw.net/api/shl/refresh-logos | jq
+```
+
+För att tvinga omladdning även av befintliga filer:
+
+```bash
+curl -s -X POST 'https://api.ulnihnw.net/api/shl/refresh-logos?force=true' | jq
+```
+
+Visa aktuella lag och deras lokala logo-URL:
+
+```bash
+curl -s https://api.ulnihnw.net/api/shl/teams | jq
+```
+
+När en logga finns lokalt innehåller matchobjekten dessutom:
+
+```json
+{
+  "home": "Frölunda HC",
+  "home_logo": "https://api.ulnihnw.net/api/shl/logos/frolunda-hc.svg",
+  "away": "Färjestad BK",
+  "away_logo": "https://api.ulnihnw.net/api/shl/logos/farjestad-bk.svg"
+}
+```
+
+Det gör att Home Assistant kan använda logo-URL:erna direkt utan egen
+mapping mellan lagnamn och bildfiler.
+
 ## Konfiguration
 
 Alla miljöspecifika värden finns i `.env`. Repot innehåller endast
@@ -170,6 +219,7 @@ Alla miljöspecifika värden finns i `.env`. Repot innehåller endast
 Konfigurerbara värden:
 
 - `SHL_URL`
+- `SHL_TEAMS_URL`
 - `SHL_SEASON_UUID`
 - `SHL_SERIES_UUID`
 - `SHL_GAME_TYPE_UUID`
@@ -177,11 +227,13 @@ Konfigurerbara värden:
 - `SHL_PLAYED`
 - `SHL_DATA_DIR`
 - `SHL_CACHE_FILE`
+- `SHL_LOGO_DIR`
 - `SHL_TIMEZONE`
 - `SHL_MIN_GAMES`
 - `SHL_REQUEST_TIMEOUT`
 - `SHL_USER_AGENT`
 - `API_ROOT_PATH`
+- `PUBLIC_BASE_URL`
 
 
 ## Produktionsadress
