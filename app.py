@@ -832,6 +832,7 @@ def logo_file(filename: str):
         requested,
         media_type="image/svg+xml",
         filename=filename,
+        content_disposition_type="inline",
     )
 
 
