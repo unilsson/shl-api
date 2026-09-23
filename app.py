@@ -1,12 +1,17 @@
 import json
 import os
+import re
+import unicodedata
 from datetime import datetime, timedelta
 from pathlib import Path
+from urllib.parse import urljoin, urlparse
 from zoneinfo import ZoneInfo
 
 import requests
+from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.staticfiles import StaticFiles
 
 
 # ============================================================
@@ -67,7 +72,13 @@ LOCAL_TZ = ZoneInfo(TIMEZONE_NAME)
 SHL_MIN_GAMES = int(require_env("SHL_MIN_GAMES"))
 SHL_REQUEST_TIMEOUT = float(require_env("SHL_REQUEST_TIMEOUT"))
 SHL_USER_AGENT = require_env("SHL_USER_AGENT")
+SHL_TEAMS_URL = require_env("SHL_TEAMS_URL")
+LOGO_DIR = env_path("SHL_LOGO_DIR")
+LOGO_INDEX_FILE = LOGO_DIR / "index.json"
+PUBLIC_BASE_URL = require_env("PUBLIC_BASE_URL").rstrip("/")
 API_ROOT_PATH = require_env("API_ROOT_PATH")
+
+LOGO_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # ============================================================
@@ -77,8 +88,14 @@ API_ROOT_PATH = require_env("API_ROOT_PATH")
 app = FastAPI(
     title="SHL API",
     description="Lokalt cache-API för SHL:s spelschema",
-    version="1.0.0",
+    version="1.1.0",
     root_path=API_ROOT_PATH,
+)
+
+app.mount(
+    "/logos",
+    StaticFiles(directory=str(LOGO_DIR)),
+    name="logos",
 )
 
 
@@ -207,6 +224,271 @@ def game_sort_key(game: dict) -> datetime:
     return datetime.max.replace(tzinfo=LOCAL_TZ)
 
 
+
+def slugify_team_name(name: str) -> str:
+    """
+    Skapa ett stabilt filnamn från ett lagnamn.
+    """
+
+    normalized = unicodedata.normalize("NFKD", name)
+    ascii_name = normalized.encode("ascii", "ignore").decode("ascii")
+    slug = re.sub(r"[^a-zA-Z0-9]+", "-", ascii_name).strip("-").lower()
+
+    return slug or "team"
+
+
+def load_logo_index() -> dict:
+    """
+    Läs lokal mapping mellan lagnamn och logofil.
+    """
+
+    if not LOGO_INDEX_FILE.exists():
+        return {}
+
+    try:
+        with LOGO_INDEX_FILE.open("r", encoding="utf-8") as file:
+            data = json.load(file)
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+    return data if isinstance(data, dict) else {}
+
+
+def save_logo_index(index: dict) -> None:
+    """
+    Skriv logoindex atomärt.
+    """
+
+    LOGO_DIR.mkdir(parents=True, exist_ok=True)
+    tmp_file = LOGO_INDEX_FILE.with_suffix(".json.tmp")
+
+    with tmp_file.open("w", encoding="utf-8") as file:
+        json.dump(index, file, ensure_ascii=False, indent=2)
+
+    tmp_file.replace(LOGO_INDEX_FILE)
+
+
+def local_logo_url(team: str) -> str | None:
+    """
+    Returnera publik HTTPS-URL till lokalt cachad laglogga.
+    """
+
+    index = load_logo_index()
+    filename = index.get(team)
+
+    if not filename:
+        return None
+
+    path = LOGO_DIR / filename
+
+    if not path.exists():
+        return None
+
+    return f"{PUBLIC_BASE_URL}/logos/{filename}"
+
+
+def image_source_from_tag(image) -> str | None:
+    """
+    Hämta bästa bild-URL från ett img-element.
+    """
+
+    for attribute in ("src", "data-src", "data-lazy-src"):
+        value = image.get(attribute)
+
+        if value:
+            return str(value).strip()
+
+    srcset = image.get("srcset")
+
+    if srcset:
+        first = str(srcset).split(",")[0].strip().split(" ")[0]
+
+        if first:
+            return first
+
+    return None
+
+
+def discover_team_logo_sources(expected_teams: set[str]) -> dict:
+    """
+    Läs SHL:s tabellsida och hitta logo-URL för aktuella lag.
+
+    SHL:s tabell renderar lagloggor som bilder med alt-text på formen
+    "<lagnamn> logo". Vi använder endast lag som faktiskt förekommer
+    i den lokala schemacachen.
+    """
+
+    headers = {
+        "Accept": "text/html,application/xhtml+xml",
+        "User-Agent": SHL_USER_AGENT,
+    }
+
+    try:
+        response = requests.get(
+            SHL_TEAMS_URL,
+            headers=headers,
+            timeout=SHL_REQUEST_TIMEOUT,
+        )
+        response.raise_for_status()
+    except requests.RequestException as exc:
+        raise RuntimeError(f"Kunde inte hämta SHL:s lagsida: {exc}") from exc
+
+    soup = BeautifulSoup(response.text, "html.parser")
+    expected_by_casefold = {
+        team.casefold(): team
+        for team in expected_teams
+    }
+
+    discovered = {}
+
+    for image in soup.find_all("img"):
+        alt = str(image.get("alt") or "").strip()
+
+        if not alt.lower().endswith(" logo"):
+            continue
+
+        displayed_name = alt[:-5].strip()
+        canonical_name = expected_by_casefold.get(displayed_name.casefold())
+
+        if not canonical_name:
+            continue
+
+        source = image_source_from_tag(image)
+
+        if not source:
+            continue
+
+        absolute_url = urljoin(SHL_TEAMS_URL, source)
+
+        if urlparse(absolute_url).scheme not in ("http", "https"):
+            continue
+
+        discovered[canonical_name] = absolute_url
+
+    return discovered
+
+
+def logo_extension(response: requests.Response, source_url: str) -> str:
+    """
+    Bestäm ett säkert filtillägg från Content-Type eller käll-URL.
+    """
+
+    content_type = response.headers.get("Content-Type", "").split(";")[0].lower()
+
+    by_content_type = {
+        "image/svg+xml": ".svg",
+        "image/png": ".png",
+        "image/jpeg": ".jpg",
+        "image/webp": ".webp",
+    }
+
+    if content_type in by_content_type:
+        return by_content_type[content_type]
+
+    suffix = Path(urlparse(source_url).path).suffix.lower()
+
+    if suffix in {".svg", ".png", ".jpg", ".jpeg", ".webp"}:
+        return ".jpg" if suffix == ".jpeg" else suffix
+
+    raise RuntimeError(
+        f"Okänt bildformat för {source_url}: {content_type or 'saknas'}"
+    )
+
+
+def refresh_team_logos(games: list, force: bool = False) -> dict:
+    """
+    Ladda ned saknade lagloggor till lokal runtime-cache.
+
+    Befintliga filer återanvänds om force=False.
+    """
+
+    expected_teams = {
+        team_name(game.get(side) or {})
+        for game in games
+        for side in ("homeTeamInfo", "awayTeamInfo")
+    }
+    expected_teams.discard("Okänt lag")
+
+    index = load_logo_index()
+
+    needed = {
+        team
+        for team in expected_teams
+        if (
+            force
+            or not index.get(team)
+            or not (LOGO_DIR / index[team]).exists()
+        )
+    }
+
+    if not needed:
+        return {
+            "status": "ok",
+            "teams": len(expected_teams),
+            "downloaded": 0,
+            "missing": [],
+        }
+
+    sources = discover_team_logo_sources(expected_teams)
+
+    downloaded = 0
+    missing = []
+
+    for team in sorted(needed):
+        source_url = sources.get(team)
+
+        if not source_url:
+            missing.append(team)
+            continue
+
+        try:
+            response = requests.get(
+                source_url,
+                headers={"User-Agent": SHL_USER_AGENT},
+                timeout=SHL_REQUEST_TIMEOUT,
+            )
+            response.raise_for_status()
+
+            if not response.headers.get("Content-Type", "").lower().startswith("image/"):
+                raise RuntimeError("svaret är inte en bild")
+
+            extension = logo_extension(response, source_url)
+            filename = f"{slugify_team_name(team)}{extension}"
+            target = LOGO_DIR / filename
+            tmp_file = target.with_suffix(target.suffix + ".tmp")
+
+            if len(response.content) > 2 * 1024 * 1024:
+                raise RuntimeError("bildfilen är större än 2 MiB")
+
+            with tmp_file.open("wb") as file:
+                file.write(response.content)
+
+            tmp_file.replace(target)
+
+            old_filename = index.get(team)
+
+            if old_filename and old_filename != filename:
+                try:
+                    (LOGO_DIR / old_filename).unlink(missing_ok=True)
+                except OSError:
+                    pass
+
+            index[team] = filename
+            downloaded += 1
+
+        except (requests.RequestException, OSError, RuntimeError):
+            missing.append(team)
+
+    save_logo_index(index)
+
+    return {
+        "status": "ok" if not missing else "partial",
+        "teams": len(expected_teams),
+        "downloaded": downloaded,
+        "missing": sorted(set(missing)),
+    }
+
+
 def serialize_game(game: dict) -> dict:
     """
     Returnera en förenklad representation av en SHL-match.
@@ -214,6 +496,9 @@ def serialize_game(game: dict) -> dict:
 
     start = parse_game_start(game)
     venue = game.get("venueInfo") or {}
+
+    home = team_name(game.get("homeTeamInfo") or {})
+    away = team_name(game.get("awayTeamInfo") or {})
 
     result = {
         "id": game.get("uuid"),
@@ -223,8 +508,10 @@ def serialize_game(game: dict) -> dict:
         "date": start.strftime("%Y-%m-%d") if start else None,
         "time": start.strftime("%H:%M") if start else None,
         "state": game.get("state"),
-        "home": team_name(game.get("homeTeamInfo") or {}),
-        "away": team_name(game.get("awayTeamInfo") or {}),
+        "home": home,
+        "home_logo": local_logo_url(home),
+        "away": away,
+        "away_logo": local_logo_url(away),
         "venue": venue.get("name"),
     }
 
@@ -297,6 +584,9 @@ def config():
         "timezone": TIMEZONE_NAME,
         "minimum_games": SHL_MIN_GAMES,
         "request_timeout": SHL_REQUEST_TIMEOUT,
+        "teams_url": SHL_TEAMS_URL,
+        "logo_dir": str(LOGO_DIR),
+        "public_base_url": PUBLIC_BASE_URL,
         "api_root_path": API_ROOT_PATH,
     }
 
@@ -570,6 +860,57 @@ def matches_within_days(
     }
 
 
+@app.get("/teams")
+def teams():
+    """
+    Visa aktuella lag och lokalt cachade logo-URL:er.
+    """
+
+    data = load_schedule()
+    games = get_games(data)
+
+    names = sorted({
+        team_name(game.get(side) or {})
+        for game in games
+        for side in ("homeTeamInfo", "awayTeamInfo")
+    })
+
+    return {
+        "count": len(names),
+        "teams": [
+            {
+                "name": name,
+                "logo": local_logo_url(name),
+            }
+            for name in names
+            if name != "Okänt lag"
+        ],
+    }
+
+
+@app.post("/refresh-logos")
+def refresh_logos(
+    force: bool = Query(
+        default=False,
+        description="Ladda om även loggor som redan finns lokalt",
+    ),
+):
+    """
+    Hämta lagloggor från SHL:s tabellsida och lagra dem lokalt.
+    """
+
+    data = load_schedule()
+    games = get_games(data)
+
+    try:
+        return refresh_team_logos(games, force=force)
+    except RuntimeError as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=str(exc),
+        ) from exc
+
+
 @app.post("/refresh")
 def refresh():
     """
@@ -687,10 +1028,19 @@ def refresh():
         if game.get("roundNumber") is not None
     }
 
+    try:
+        logo_refresh = refresh_team_logos(games, force=False)
+    except RuntimeError as exc:
+        logo_refresh = {
+            "status": "warning",
+            "detail": str(exc),
+        }
+
     return {
         "status": "ok",
         "games": len(games),
         "rounds": len(rounds),
         "updated": datetime.now(LOCAL_TZ).isoformat(),
         "cache_file": str(CACHE_FILE),
+        "logos": logo_refresh,
     }
