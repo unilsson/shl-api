@@ -183,6 +183,50 @@ Konfigurerbara värden:
 - `SHL_USER_AGENT`
 - `API_ROOT_PATH`
 
+## Daglig uppdatering med systemd
+
+Repot innehåller färdiga exempel under `systemd/`:
+
+- `systemd/shl-refresh.service`
+- `systemd/shl-refresh.timer`
+
+Timern kör en cacheuppdatering varje dag klockan 04:15 och använder
+`Persistent=true`, vilket innebär att en missad körning triggas efter nästa
+uppstart.
+
+När tjänsten senare installeras på en server:
+
+```bash
+sudo cp systemd/shl-refresh.service /etc/systemd/system/
+sudo cp systemd/shl-refresh.timer /etc/systemd/system/
+
+sudo systemctl daemon-reload
+sudo systemctl enable --now shl-refresh.timer
+```
+
+Kontrollera timern:
+
+```bash
+systemctl list-timers shl-refresh.timer
+```
+
+Testa uppdateringen manuellt:
+
+```bash
+sudo systemctl start shl-refresh.service
+systemctl status shl-refresh.service
+```
+
+Loggar visas med:
+
+```bash
+journalctl -u shl-refresh.service -n 50
+```
+
+Servicefilen förutsätter att API:t nås lokalt på
+`http://127.0.0.1:8093/refresh`. Anpassa filen vid installation om API:t
+kör på en annan port eller adress.
+
 ## Git och lokal data
 
 Följande ska inte versionshanteras:
