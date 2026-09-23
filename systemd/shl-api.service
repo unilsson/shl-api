@@ -1,0 +1,16 @@
+[Unit]
+Description=SHL FastAPI service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=unilsson
+WorkingDirectory=/home/unilsson/Development/shl-api
+ExecStart=/home/unilsson/Development/shl-api/.venv/bin/uvicorn app:app --host 0.0.0.0 --port 8093
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
