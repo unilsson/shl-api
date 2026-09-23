@@ -1,0 +1,2912 @@
+{
+  "round": 1,
+  "round_label": "",
+  "start": "2026-09-19T13:15:00.000Z",
+  "state": "post-game",
+  "home": "HV71",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 1,
+  "round_label": "",
+  "start": "2026-09-19T13:15:00.000Z",
+  "state": "post-game",
+  "home": "Linköping HC",
+  "away": "Timrå IK"
+}
+{
+  "round": 1,
+  "round_label": "",
+  "start": "2026-09-19T13:15:00.000Z",
+  "state": "post-game",
+  "home": "Frölunda HC",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 1,
+  "round_label": "",
+  "start": "2026-09-19T13:15:00.000Z",
+  "state": "post-game",
+  "home": "Skellefteå AIK",
+  "away": "Brynäs IF"
+}
+{
+  "round": 1,
+  "round_label": "",
+  "start": "2026-09-19T16:00:00.000Z",
+  "state": "post-game",
+  "home": "Luleå Hockey",
+  "away": "Rögle BK"
+}
+{
+  "round": 1,
+  "round_label": "",
+  "start": "2026-09-19T16:00:00.000Z",
+  "state": "post-game",
+  "home": "Färjestad BK",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 1,
+  "round_label": "",
+  "start": "2026-09-19T16:00:00.000Z",
+  "state": "post-game",
+  "home": "Djurgårdens IF",
+  "away": "Björklöven"
+}
+{
+  "round": 2,
+  "round_label": "",
+  "start": "2026-09-22T17:00:00.000Z",
+  "state": "post-game",
+  "home": "Linköping HC",
+  "away": "Brynäs IF"
+}
+{
+  "round": 2,
+  "round_label": "",
+  "start": "2026-09-22T17:00:00.000Z",
+  "state": "post-game",
+  "home": "Timrå IK",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 2,
+  "round_label": "",
+  "start": "2026-09-22T17:00:00.000Z",
+  "state": "post-game",
+  "home": "Frölunda HC",
+  "away": "Färjestad BK"
+}
+{
+  "round": 2,
+  "round_label": "",
+  "start": "2026-09-22T17:00:00.000Z",
+  "state": "post-game",
+  "home": "Växjö Lakers",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 2,
+  "round_label": "",
+  "start": "2026-09-22T17:00:00.000Z",
+  "state": "post-game",
+  "home": "Rögle BK",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 3,
+  "round_label": "",
+  "start": "2026-09-24T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Rögle BK"
+}
+{
+  "round": 3,
+  "round_label": "",
+  "start": "2026-09-24T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 3,
+  "round_label": "",
+  "start": "2026-09-24T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 3,
+  "round_label": "",
+  "start": "2026-09-24T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Björklöven"
+}
+{
+  "round": 3,
+  "round_label": "",
+  "start": "2026-09-24T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Frölunda HC"
+}
+{
+  "round": 4,
+  "round_label": "",
+  "start": "2026-09-26T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 4,
+  "round_label": "",
+  "start": "2026-09-26T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Linköping HC"
+}
+{
+  "round": 4,
+  "round_label": "",
+  "start": "2026-09-26T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Färjestad BK"
+}
+{
+  "round": 4,
+  "round_label": "",
+  "start": "2026-09-26T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Frölunda HC"
+}
+{
+  "round": 4,
+  "round_label": "",
+  "start": "2026-09-26T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 4,
+  "round_label": "",
+  "start": "2026-09-26T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "HV71"
+}
+{
+  "round": 4,
+  "round_label": "",
+  "start": "2026-09-26T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 3,
+  "round_label": "",
+  "start": "2026-09-29T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Timrå IK"
+}
+{
+  "round": 2,
+  "round_label": "",
+  "start": "2026-09-29T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "HV71"
+}
+{
+  "round": 2,
+  "round_label": "",
+  "start": "2026-09-29T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 5,
+  "round_label": "",
+  "start": "2026-10-01T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 5,
+  "round_label": "",
+  "start": "2026-10-01T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 5,
+  "round_label": "",
+  "start": "2026-10-01T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 5,
+  "round_label": "",
+  "start": "2026-10-01T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Brynäs IF"
+}
+{
+  "round": 5,
+  "round_label": "",
+  "start": "2026-10-01T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Färjestad BK"
+}
+{
+  "round": 5,
+  "round_label": "",
+  "start": "2026-10-01T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Timrå IK"
+}
+{
+  "round": 5,
+  "round_label": "",
+  "start": "2026-10-01T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 6,
+  "round_label": "",
+  "start": "2026-10-03T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 6,
+  "round_label": "",
+  "start": "2026-10-03T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Rögle BK"
+}
+{
+  "round": 6,
+  "round_label": "",
+  "start": "2026-10-03T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Brynäs IF"
+}
+{
+  "round": 6,
+  "round_label": "",
+  "start": "2026-10-03T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 6,
+  "round_label": "",
+  "start": "2026-10-03T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 6,
+  "round_label": "",
+  "start": "2026-10-03T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Björklöven"
+}
+{
+  "round": 6,
+  "round_label": "",
+  "start": "2026-10-03T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "HV71"
+}
+{
+  "round": 7,
+  "round_label": "",
+  "start": "2026-10-08T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 7,
+  "round_label": "",
+  "start": "2026-10-08T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 7,
+  "round_label": "",
+  "start": "2026-10-08T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Färjestad BK"
+}
+{
+  "round": 7,
+  "round_label": "",
+  "start": "2026-10-08T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "HV71"
+}
+{
+  "round": 7,
+  "round_label": "",
+  "start": "2026-10-08T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Linköping HC"
+}
+{
+  "round": 7,
+  "round_label": "",
+  "start": "2026-10-08T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Frölunda HC"
+}
+{
+  "round": 7,
+  "round_label": "",
+  "start": "2026-10-08T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Björklöven"
+}
+{
+  "round": 8,
+  "round_label": "",
+  "start": "2026-10-10T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Brynäs IF"
+}
+{
+  "round": 8,
+  "round_label": "",
+  "start": "2026-10-10T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 8,
+  "round_label": "",
+  "start": "2026-10-10T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Timrå IK"
+}
+{
+  "round": 8,
+  "round_label": "",
+  "start": "2026-10-10T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 8,
+  "round_label": "",
+  "start": "2026-10-10T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Frölunda HC"
+}
+{
+  "round": 8,
+  "round_label": "",
+  "start": "2026-10-10T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Rögle BK"
+}
+{
+  "round": 8,
+  "round_label": "",
+  "start": "2026-10-10T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Linköping HC"
+}
+{
+  "round": 9,
+  "round_label": "",
+  "start": "2026-10-15T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 9,
+  "round_label": "",
+  "start": "2026-10-15T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Frölunda HC"
+}
+{
+  "round": 9,
+  "round_label": "",
+  "start": "2026-10-15T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 9,
+  "round_label": "",
+  "start": "2026-10-15T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 9,
+  "round_label": "",
+  "start": "2026-10-15T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Rögle BK"
+}
+{
+  "round": 9,
+  "round_label": "",
+  "start": "2026-10-15T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 9,
+  "round_label": "",
+  "start": "2026-10-15T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "HV71"
+}
+{
+  "round": 10,
+  "round_label": "",
+  "start": "2026-10-17T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 10,
+  "round_label": "",
+  "start": "2026-10-17T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 10,
+  "round_label": "",
+  "start": "2026-10-17T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "HV71"
+}
+{
+  "round": 10,
+  "round_label": "",
+  "start": "2026-10-17T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 10,
+  "round_label": "",
+  "start": "2026-10-17T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Färjestad BK"
+}
+{
+  "round": 10,
+  "round_label": "",
+  "start": "2026-10-17T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 10,
+  "round_label": "",
+  "start": "2026-10-17T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Björklöven"
+}
+{
+  "round": 11,
+  "round_label": "",
+  "start": "2026-10-20T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Linköping HC"
+}
+{
+  "round": 25,
+  "round_label": "",
+  "start": "2026-10-20T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 11,
+  "round_label": "",
+  "start": "2026-10-22T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 11,
+  "round_label": "",
+  "start": "2026-10-22T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Färjestad BK"
+}
+{
+  "round": 11,
+  "round_label": "",
+  "start": "2026-10-22T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Frölunda HC"
+}
+{
+  "round": 11,
+  "round_label": "",
+  "start": "2026-10-22T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 11,
+  "round_label": "",
+  "start": "2026-10-22T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 11,
+  "round_label": "",
+  "start": "2026-10-22T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Brynäs IF"
+}
+{
+  "round": 12,
+  "round_label": "",
+  "start": "2026-10-24T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 12,
+  "round_label": "",
+  "start": "2026-10-24T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 12,
+  "round_label": "",
+  "start": "2026-10-24T13:15:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Timrå IK"
+}
+{
+  "round": 12,
+  "round_label": "",
+  "start": "2026-10-24T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 12,
+  "round_label": "",
+  "start": "2026-10-24T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Frölunda HC"
+}
+{
+  "round": 12,
+  "round_label": "",
+  "start": "2026-10-24T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Rögle BK"
+}
+{
+  "round": 12,
+  "round_label": "",
+  "start": "2026-10-24T16:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 27,
+  "round_label": "",
+  "start": "2026-10-27T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Rögle BK"
+}
+{
+  "round": 3,
+  "round_label": "",
+  "start": "2026-10-27T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Linköping HC"
+}
+{
+  "round": 13,
+  "round_label": "",
+  "start": "2026-10-29T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Linköping HC"
+}
+{
+  "round": 13,
+  "round_label": "",
+  "start": "2026-10-29T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Färjestad BK"
+}
+{
+  "round": 13,
+  "round_label": "",
+  "start": "2026-10-29T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 13,
+  "round_label": "",
+  "start": "2026-10-29T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 13,
+  "round_label": "",
+  "start": "2026-10-29T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Frölunda HC"
+}
+{
+  "round": 13,
+  "round_label": "",
+  "start": "2026-10-29T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Björklöven"
+}
+{
+  "round": 13,
+  "round_label": "",
+  "start": "2026-10-29T18:30:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "HV71"
+}
+{
+  "round": 14,
+  "round_label": "",
+  "start": "2026-10-31T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Linköping HC"
+}
+{
+  "round": 14,
+  "round_label": "",
+  "start": "2026-10-31T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Björklöven"
+}
+{
+  "round": 14,
+  "round_label": "",
+  "start": "2026-10-31T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Färjestad BK"
+}
+{
+  "round": 14,
+  "round_label": "",
+  "start": "2026-10-31T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Brynäs IF"
+}
+{
+  "round": 14,
+  "round_label": "",
+  "start": "2026-10-31T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "HV71"
+}
+{
+  "round": 14,
+  "round_label": "",
+  "start": "2026-10-31T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Rögle BK"
+}
+{
+  "round": 14,
+  "round_label": "",
+  "start": "2026-10-31T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 15,
+  "round_label": "",
+  "start": "2026-11-12T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 15,
+  "round_label": "",
+  "start": "2026-11-12T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 15,
+  "round_label": "",
+  "start": "2026-11-12T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 15,
+  "round_label": "",
+  "start": "2026-11-12T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 15,
+  "round_label": "",
+  "start": "2026-11-12T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 15,
+  "round_label": "",
+  "start": "2026-11-12T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Rögle BK"
+}
+{
+  "round": 15,
+  "round_label": "",
+  "start": "2026-11-12T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Timrå IK"
+}
+{
+  "round": 16,
+  "round_label": "",
+  "start": "2026-11-14T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 16,
+  "round_label": "",
+  "start": "2026-11-14T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Frölunda HC"
+}
+{
+  "round": 16,
+  "round_label": "",
+  "start": "2026-11-14T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Timrå IK"
+}
+{
+  "round": 16,
+  "round_label": "",
+  "start": "2026-11-14T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Linköping HC"
+}
+{
+  "round": 16,
+  "round_label": "",
+  "start": "2026-11-14T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 16,
+  "round_label": "",
+  "start": "2026-11-14T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Brynäs IF"
+}
+{
+  "round": 16,
+  "round_label": "",
+  "start": "2026-11-14T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Färjestad BK"
+}
+{
+  "round": 17,
+  "round_label": "",
+  "start": "2026-11-19T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "HV71"
+}
+{
+  "round": 17,
+  "round_label": "",
+  "start": "2026-11-19T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Rögle BK"
+}
+{
+  "round": 17,
+  "round_label": "",
+  "start": "2026-11-19T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 17,
+  "round_label": "",
+  "start": "2026-11-19T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 17,
+  "round_label": "",
+  "start": "2026-11-19T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 17,
+  "round_label": "",
+  "start": "2026-11-19T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Björklöven"
+}
+{
+  "round": 17,
+  "round_label": "",
+  "start": "2026-11-19T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Frölunda HC"
+}
+{
+  "round": 18,
+  "round_label": "",
+  "start": "2026-11-21T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Brynäs IF"
+}
+{
+  "round": 18,
+  "round_label": "",
+  "start": "2026-11-21T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Timrå IK"
+}
+{
+  "round": 18,
+  "round_label": "",
+  "start": "2026-11-21T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 18,
+  "round_label": "",
+  "start": "2026-11-21T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 18,
+  "round_label": "",
+  "start": "2026-11-21T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 18,
+  "round_label": "",
+  "start": "2026-11-21T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Linköping HC"
+}
+{
+  "round": 18,
+  "round_label": "",
+  "start": "2026-11-21T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 19,
+  "round_label": "",
+  "start": "2026-11-24T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 26,
+  "round_label": "",
+  "start": "2026-11-24T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Frölunda HC"
+}
+{
+  "round": 19,
+  "round_label": "",
+  "start": "2026-11-26T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Brynäs IF"
+}
+{
+  "round": 19,
+  "round_label": "",
+  "start": "2026-11-26T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Björklöven"
+}
+{
+  "round": 19,
+  "round_label": "",
+  "start": "2026-11-26T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "HV71"
+}
+{
+  "round": 19,
+  "round_label": "",
+  "start": "2026-11-26T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 19,
+  "round_label": "",
+  "start": "2026-11-26T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Färjestad BK"
+}
+{
+  "round": 19,
+  "round_label": "",
+  "start": "2026-11-26T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Rögle BK"
+}
+{
+  "round": 20,
+  "round_label": "",
+  "start": "2026-11-28T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 20,
+  "round_label": "",
+  "start": "2026-11-28T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Linköping HC"
+}
+{
+  "round": 20,
+  "round_label": "",
+  "start": "2026-11-28T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Färjestad BK"
+}
+{
+  "round": 20,
+  "round_label": "",
+  "start": "2026-11-28T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 20,
+  "round_label": "",
+  "start": "2026-11-28T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Björklöven"
+}
+{
+  "round": 20,
+  "round_label": "",
+  "start": "2026-11-28T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Frölunda HC"
+}
+{
+  "round": 20,
+  "round_label": "",
+  "start": "2026-11-28T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Rögle BK"
+}
+{
+  "round": 21,
+  "round_label": "",
+  "start": "2026-12-03T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 21,
+  "round_label": "",
+  "start": "2026-12-03T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 21,
+  "round_label": "",
+  "start": "2026-12-03T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Färjestad BK"
+}
+{
+  "round": 46,
+  "round_label": "",
+  "start": "2026-12-03T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Timrå IK"
+}
+{
+  "round": 21,
+  "round_label": "",
+  "start": "2026-12-03T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Brynäs IF"
+}
+{
+  "round": 21,
+  "round_label": "",
+  "start": "2026-12-03T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 21,
+  "round_label": "",
+  "start": "2026-12-03T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 22,
+  "round_label": "",
+  "start": "2026-12-05T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Timrå IK"
+}
+{
+  "round": 22,
+  "round_label": "",
+  "start": "2026-12-05T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Frölunda HC"
+}
+{
+  "round": 22,
+  "round_label": "",
+  "start": "2026-12-05T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 22,
+  "round_label": "",
+  "start": "2026-12-05T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 22,
+  "round_label": "",
+  "start": "2026-12-05T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Brynäs IF"
+}
+{
+  "round": 22,
+  "round_label": "",
+  "start": "2026-12-05T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Linköping HC"
+}
+{
+  "round": 22,
+  "round_label": "",
+  "start": "2026-12-05T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "HV71"
+}
+{
+  "round": 23,
+  "round_label": "",
+  "start": "2026-12-17T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Brynäs IF"
+}
+{
+  "round": 23,
+  "round_label": "",
+  "start": "2026-12-17T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 23,
+  "round_label": "",
+  "start": "2026-12-17T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 23,
+  "round_label": "",
+  "start": "2026-12-17T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Rögle BK"
+}
+{
+  "round": 23,
+  "round_label": "",
+  "start": "2026-12-17T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Frölunda HC"
+}
+{
+  "round": 23,
+  "round_label": "",
+  "start": "2026-12-17T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 23,
+  "round_label": "",
+  "start": "2026-12-17T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 24,
+  "round_label": "",
+  "start": "2026-12-19T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Färjestad BK"
+}
+{
+  "round": 24,
+  "round_label": "",
+  "start": "2026-12-19T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 24,
+  "round_label": "",
+  "start": "2026-12-19T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Frölunda HC"
+}
+{
+  "round": 24,
+  "round_label": "",
+  "start": "2026-12-19T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Rögle BK"
+}
+{
+  "round": 24,
+  "round_label": "",
+  "start": "2026-12-19T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 24,
+  "round_label": "",
+  "start": "2026-12-19T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Björklöven"
+}
+{
+  "round": 24,
+  "round_label": "",
+  "start": "2026-12-19T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 25,
+  "round_label": "",
+  "start": "2026-12-26T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Linköping HC"
+}
+{
+  "round": 25,
+  "round_label": "",
+  "start": "2026-12-26T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Timrå IK"
+}
+{
+  "round": 25,
+  "round_label": "",
+  "start": "2026-12-26T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 25,
+  "round_label": "",
+  "start": "2026-12-26T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 25,
+  "round_label": "",
+  "start": "2026-12-26T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Björklöven"
+}
+{
+  "round": 25,
+  "round_label": "",
+  "start": "2026-12-26T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Rögle BK"
+}
+{
+  "round": 26,
+  "round_label": "",
+  "start": "2026-12-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Brynäs IF"
+}
+{
+  "round": 26,
+  "round_label": "",
+  "start": "2026-12-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 26,
+  "round_label": "",
+  "start": "2026-12-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "HV71"
+}
+{
+  "round": 26,
+  "round_label": "",
+  "start": "2026-12-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 26,
+  "round_label": "",
+  "start": "2026-12-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 26,
+  "round_label": "",
+  "start": "2026-12-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Färjestad BK"
+}
+{
+  "round": 27,
+  "round_label": "",
+  "start": "2026-12-30T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Linköping HC"
+}
+{
+  "round": 27,
+  "round_label": "",
+  "start": "2026-12-30T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 27,
+  "round_label": "",
+  "start": "2026-12-30T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 27,
+  "round_label": "",
+  "start": "2026-12-30T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 27,
+  "round_label": "",
+  "start": "2026-12-30T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 27,
+  "round_label": "",
+  "start": "2026-12-30T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Timrå IK"
+}
+{
+  "round": 28,
+  "round_label": "",
+  "start": "2027-01-02T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Björklöven"
+}
+{
+  "round": 28,
+  "round_label": "",
+  "start": "2027-01-02T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 28,
+  "round_label": "",
+  "start": "2027-01-02T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Timrå IK"
+}
+{
+  "round": 28,
+  "round_label": "",
+  "start": "2027-01-02T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "HV71"
+}
+{
+  "round": 28,
+  "round_label": "",
+  "start": "2027-01-02T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Brynäs IF"
+}
+{
+  "round": 28,
+  "round_label": "",
+  "start": "2027-01-02T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Frölunda HC"
+}
+{
+  "round": 28,
+  "round_label": "",
+  "start": "2027-01-02T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 29,
+  "round_label": "",
+  "start": "2027-01-05T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Timrå IK"
+}
+{
+  "round": 29,
+  "round_label": "",
+  "start": "2027-01-05T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Linköping HC"
+}
+{
+  "round": 29,
+  "round_label": "",
+  "start": "2027-01-05T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 29,
+  "round_label": "",
+  "start": "2027-01-05T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "HV71"
+}
+{
+  "round": 29,
+  "round_label": "",
+  "start": "2027-01-05T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 29,
+  "round_label": "",
+  "start": "2027-01-05T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 29,
+  "round_label": "",
+  "start": "2027-01-05T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 30,
+  "round_label": "",
+  "start": "2027-01-07T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Rögle BK"
+}
+{
+  "round": 30,
+  "round_label": "",
+  "start": "2027-01-07T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 30,
+  "round_label": "",
+  "start": "2027-01-07T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 30,
+  "round_label": "",
+  "start": "2027-01-07T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Timrå IK"
+}
+{
+  "round": 30,
+  "round_label": "",
+  "start": "2027-01-07T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Färjestad BK"
+}
+{
+  "round": 30,
+  "round_label": "",
+  "start": "2027-01-07T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 30,
+  "round_label": "",
+  "start": "2027-01-07T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Frölunda HC"
+}
+{
+  "round": 31,
+  "round_label": "",
+  "start": "2027-01-09T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 31,
+  "round_label": "",
+  "start": "2027-01-09T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Björklöven"
+}
+{
+  "round": 31,
+  "round_label": "",
+  "start": "2027-01-09T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 31,
+  "round_label": "",
+  "start": "2027-01-09T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Linköping HC"
+}
+{
+  "round": 31,
+  "round_label": "",
+  "start": "2027-01-09T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 31,
+  "round_label": "",
+  "start": "2027-01-09T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Färjestad BK"
+}
+{
+  "round": 31,
+  "round_label": "",
+  "start": "2027-01-09T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Brynäs IF"
+}
+{
+  "round": 32,
+  "round_label": "",
+  "start": "2027-01-14T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 32,
+  "round_label": "",
+  "start": "2027-01-14T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Rögle BK"
+}
+{
+  "round": 32,
+  "round_label": "",
+  "start": "2027-01-14T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 32,
+  "round_label": "",
+  "start": "2027-01-14T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Frölunda HC"
+}
+{
+  "round": 32,
+  "round_label": "",
+  "start": "2027-01-14T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Brynäs IF"
+}
+{
+  "round": 32,
+  "round_label": "",
+  "start": "2027-01-14T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "HV71"
+}
+{
+  "round": 32,
+  "round_label": "",
+  "start": "2027-01-14T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Linköping HC"
+}
+{
+  "round": 33,
+  "round_label": "",
+  "start": "2027-01-16T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Timrå IK"
+}
+{
+  "round": 33,
+  "round_label": "",
+  "start": "2027-01-16T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 33,
+  "round_label": "",
+  "start": "2027-01-16T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 33,
+  "round_label": "",
+  "start": "2027-01-16T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 33,
+  "round_label": "",
+  "start": "2027-01-16T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 33,
+  "round_label": "",
+  "start": "2027-01-16T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Frölunda HC"
+}
+{
+  "round": 33,
+  "round_label": "",
+  "start": "2027-01-16T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 34,
+  "round_label": "",
+  "start": "2027-01-21T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Björklöven"
+}
+{
+  "round": 34,
+  "round_label": "",
+  "start": "2027-01-21T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Linköping HC"
+}
+{
+  "round": 34,
+  "round_label": "",
+  "start": "2027-01-21T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "HV71"
+}
+{
+  "round": 34,
+  "round_label": "",
+  "start": "2027-01-21T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 34,
+  "round_label": "",
+  "start": "2027-01-21T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Brynäs IF"
+}
+{
+  "round": 34,
+  "round_label": "",
+  "start": "2027-01-21T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 34,
+  "round_label": "",
+  "start": "2027-01-21T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Färjestad BK"
+}
+{
+  "round": 35,
+  "round_label": "",
+  "start": "2027-01-23T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Färjestad BK"
+}
+{
+  "round": 35,
+  "round_label": "",
+  "start": "2027-01-23T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "HV71"
+}
+{
+  "round": 35,
+  "round_label": "",
+  "start": "2027-01-23T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Frölunda HC"
+}
+{
+  "round": 35,
+  "round_label": "",
+  "start": "2027-01-23T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Brynäs IF"
+}
+{
+  "round": 35,
+  "round_label": "",
+  "start": "2027-01-23T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Linköping HC"
+}
+{
+  "round": 35,
+  "round_label": "",
+  "start": "2027-01-23T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 35,
+  "round_label": "",
+  "start": "2027-01-23T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Rögle BK"
+}
+{
+  "round": 39,
+  "round_label": "",
+  "start": "2027-01-26T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 36,
+  "round_label": "",
+  "start": "2027-01-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 36,
+  "round_label": "",
+  "start": "2027-01-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "HV71"
+}
+{
+  "round": 36,
+  "round_label": "",
+  "start": "2027-01-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 36,
+  "round_label": "",
+  "start": "2027-01-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Timrå IK"
+}
+{
+  "round": 36,
+  "round_label": "",
+  "start": "2027-01-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 36,
+  "round_label": "",
+  "start": "2027-01-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Björklöven"
+}
+{
+  "round": 36,
+  "round_label": "",
+  "start": "2027-01-28T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 37,
+  "round_label": "",
+  "start": "2027-01-30T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 37,
+  "round_label": "",
+  "start": "2027-01-30T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 37,
+  "round_label": "",
+  "start": "2027-01-30T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 37,
+  "round_label": "",
+  "start": "2027-01-30T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Timrå IK"
+}
+{
+  "round": 37,
+  "round_label": "",
+  "start": "2027-01-30T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 37,
+  "round_label": "",
+  "start": "2027-01-30T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Rögle BK"
+}
+{
+  "round": 37,
+  "round_label": "",
+  "start": "2027-01-30T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Brynäs IF"
+}
+{
+  "round": 38,
+  "round_label": "",
+  "start": "2027-02-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Brynäs IF"
+}
+{
+  "round": 38,
+  "round_label": "",
+  "start": "2027-02-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 38,
+  "round_label": "",
+  "start": "2027-02-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Linköping HC"
+}
+{
+  "round": 38,
+  "round_label": "",
+  "start": "2027-02-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Färjestad BK"
+}
+{
+  "round": 38,
+  "round_label": "",
+  "start": "2027-02-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Frölunda HC"
+}
+{
+  "round": 38,
+  "round_label": "",
+  "start": "2027-02-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Björklöven"
+}
+{
+  "round": 38,
+  "round_label": "",
+  "start": "2027-02-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 39,
+  "round_label": "",
+  "start": "2027-02-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Timrå IK"
+}
+{
+  "round": 39,
+  "round_label": "",
+  "start": "2027-02-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 39,
+  "round_label": "",
+  "start": "2027-02-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "HV71"
+}
+{
+  "round": 39,
+  "round_label": "",
+  "start": "2027-02-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 39,
+  "round_label": "",
+  "start": "2027-02-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 39,
+  "round_label": "",
+  "start": "2027-02-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Björklöven"
+}
+{
+  "round": 40,
+  "round_label": "",
+  "start": "2027-02-06T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 40,
+  "round_label": "",
+  "start": "2027-02-06T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Färjestad BK"
+}
+{
+  "round": 40,
+  "round_label": "",
+  "start": "2027-02-06T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Rögle BK"
+}
+{
+  "round": 40,
+  "round_label": "",
+  "start": "2027-02-06T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Linköping HC"
+}
+{
+  "round": 40,
+  "round_label": "",
+  "start": "2027-02-06T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 40,
+  "round_label": "",
+  "start": "2027-02-06T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 40,
+  "round_label": "",
+  "start": "2027-02-06T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Björklöven"
+}
+{
+  "round": 41,
+  "round_label": "",
+  "start": "2027-02-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Färjestad BK"
+}
+{
+  "round": 41,
+  "round_label": "",
+  "start": "2027-02-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Frölunda HC"
+}
+{
+  "round": 41,
+  "round_label": "",
+  "start": "2027-02-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "HV71"
+}
+{
+  "round": 41,
+  "round_label": "",
+  "start": "2027-02-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Brynäs IF"
+}
+{
+  "round": 41,
+  "round_label": "",
+  "start": "2027-02-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 41,
+  "round_label": "",
+  "start": "2027-02-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Timrå IK"
+}
+{
+  "round": 41,
+  "round_label": "",
+  "start": "2027-02-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 42,
+  "round_label": "",
+  "start": "2027-02-18T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Färjestad BK"
+}
+{
+  "round": 42,
+  "round_label": "",
+  "start": "2027-02-18T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Rögle BK"
+}
+{
+  "round": 42,
+  "round_label": "",
+  "start": "2027-02-18T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 42,
+  "round_label": "",
+  "start": "2027-02-18T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 42,
+  "round_label": "",
+  "start": "2027-02-18T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 42,
+  "round_label": "",
+  "start": "2027-02-18T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Björklöven"
+}
+{
+  "round": 42,
+  "round_label": "",
+  "start": "2027-02-18T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Brynäs IF"
+}
+{
+  "round": 43,
+  "round_label": "",
+  "start": "2027-02-20T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 43,
+  "round_label": "",
+  "start": "2027-02-20T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 43,
+  "round_label": "",
+  "start": "2027-02-20T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Linköping HC"
+}
+{
+  "round": 43,
+  "round_label": "",
+  "start": "2027-02-20T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 43,
+  "round_label": "",
+  "start": "2027-02-20T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 43,
+  "round_label": "",
+  "start": "2027-02-20T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Björklöven"
+}
+{
+  "round": 43,
+  "round_label": "",
+  "start": "2027-02-20T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 44,
+  "round_label": "",
+  "start": "2027-02-25T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 44,
+  "round_label": "",
+  "start": "2027-02-25T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Linköping HC"
+}
+{
+  "round": 44,
+  "round_label": "",
+  "start": "2027-02-25T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Timrå IK"
+}
+{
+  "round": 44,
+  "round_label": "",
+  "start": "2027-02-25T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Rögle BK"
+}
+{
+  "round": 44,
+  "round_label": "",
+  "start": "2027-02-25T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Björklöven"
+}
+{
+  "round": 44,
+  "round_label": "",
+  "start": "2027-02-25T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Frölunda HC"
+}
+{
+  "round": 44,
+  "round_label": "",
+  "start": "2027-02-25T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "HV71"
+}
+{
+  "round": 45,
+  "round_label": "",
+  "start": "2027-02-27T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 45,
+  "round_label": "",
+  "start": "2027-02-27T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Timrå IK"
+}
+{
+  "round": 45,
+  "round_label": "",
+  "start": "2027-02-27T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Brynäs IF"
+}
+{
+  "round": 45,
+  "round_label": "",
+  "start": "2027-02-27T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "HV71"
+}
+{
+  "round": 45,
+  "round_label": "",
+  "start": "2027-02-27T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Färjestad BK"
+}
+{
+  "round": 45,
+  "round_label": "",
+  "start": "2027-02-27T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Frölunda HC"
+}
+{
+  "round": 45,
+  "round_label": "",
+  "start": "2027-02-27T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 21,
+  "round_label": "",
+  "start": "2027-03-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Frölunda HC"
+}
+{
+  "round": 46,
+  "round_label": "",
+  "start": "2027-03-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Rögle BK"
+}
+{
+  "round": 46,
+  "round_label": "",
+  "start": "2027-03-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 46,
+  "round_label": "",
+  "start": "2027-03-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 46,
+  "round_label": "",
+  "start": "2027-03-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Björklöven"
+}
+{
+  "round": 46,
+  "round_label": "",
+  "start": "2027-03-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 46,
+  "round_label": "",
+  "start": "2027-03-02T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 47,
+  "round_label": "",
+  "start": "2027-03-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Rögle BK"
+}
+{
+  "round": 47,
+  "round_label": "",
+  "start": "2027-03-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 47,
+  "round_label": "",
+  "start": "2027-03-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 47,
+  "round_label": "",
+  "start": "2027-03-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Timrå IK"
+}
+{
+  "round": 47,
+  "round_label": "",
+  "start": "2027-03-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 47,
+  "round_label": "",
+  "start": "2027-03-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "HV71"
+}
+{
+  "round": 47,
+  "round_label": "",
+  "start": "2027-03-04T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Linköping HC"
+}
+{
+  "round": 48,
+  "round_label": "",
+  "start": "2027-03-06T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Timrå IK"
+}
+{
+  "round": 48,
+  "round_label": "",
+  "start": "2027-03-06T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 48,
+  "round_label": "",
+  "start": "2027-03-06T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "HV71"
+}
+{
+  "round": 48,
+  "round_label": "",
+  "start": "2027-03-06T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Brynäs IF"
+}
+{
+  "round": 48,
+  "round_label": "",
+  "start": "2027-03-06T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 48,
+  "round_label": "",
+  "start": "2027-03-06T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 48,
+  "round_label": "",
+  "start": "2027-03-07T15:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Färjestad BK"
+}
+{
+  "round": 49,
+  "round_label": "",
+  "start": "2027-03-09T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Björklöven"
+}
+{
+  "round": 49,
+  "round_label": "",
+  "start": "2027-03-09T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Växjö Lakers"
+}
+{
+  "round": 49,
+  "round_label": "",
+  "start": "2027-03-09T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Rögle BK"
+}
+{
+  "round": 49,
+  "round_label": "",
+  "start": "2027-03-09T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "HV71"
+}
+{
+  "round": 49,
+  "round_label": "",
+  "start": "2027-03-09T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 49,
+  "round_label": "",
+  "start": "2027-03-09T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Linköping HC"
+}
+{
+  "round": 49,
+  "round_label": "",
+  "start": "2027-03-09T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 50,
+  "round_label": "",
+  "start": "2027-03-11T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Björklöven",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 50,
+  "round_label": "",
+  "start": "2027-03-11T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Linköping HC",
+  "away": "HV71"
+}
+{
+  "round": 50,
+  "round_label": "",
+  "start": "2027-03-11T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 50,
+  "round_label": "",
+  "start": "2027-03-11T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Timrå IK",
+  "away": "Rögle BK"
+}
+{
+  "round": 50,
+  "round_label": "",
+  "start": "2027-03-11T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 50,
+  "round_label": "",
+  "start": "2027-03-11T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 50,
+  "round_label": "",
+  "start": "2027-03-11T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Färjestad BK",
+  "away": "Brynäs IF"
+}
+{
+  "round": 51,
+  "round_label": "",
+  "start": "2027-03-13T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Djurgårdens IF",
+  "away": "Luleå Hockey"
+}
+{
+  "round": 51,
+  "round_label": "",
+  "start": "2027-03-13T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Skellefteå AIK"
+}
+{
+  "round": 51,
+  "round_label": "",
+  "start": "2027-03-13T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Malmö Redhawks"
+}
+{
+  "round": 51,
+  "round_label": "",
+  "start": "2027-03-13T14:15:00.000Z",
+  "state": "pre-game",
+  "home": "Frölunda HC",
+  "away": "Björklöven"
+}
+{
+  "round": 51,
+  "round_label": "",
+  "start": "2027-03-13T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Örebro Hockey",
+  "away": "Linköping HC"
+}
+{
+  "round": 51,
+  "round_label": "",
+  "start": "2027-03-13T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Timrå IK"
+}
+{
+  "round": 51,
+  "round_label": "",
+  "start": "2027-03-13T17:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Färjestad BK"
+}
+{
+  "round": 52,
+  "round_label": "",
+  "start": "2027-03-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Växjö Lakers",
+  "away": "Djurgårdens IF"
+}
+{
+  "round": 52,
+  "round_label": "",
+  "start": "2027-03-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "HV71",
+  "away": "Färjestad BK"
+}
+{
+  "round": 52,
+  "round_label": "",
+  "start": "2027-03-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Luleå Hockey",
+  "away": "Örebro Hockey"
+}
+{
+  "round": 52,
+  "round_label": "",
+  "start": "2027-03-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Rögle BK",
+  "away": "Linköping HC"
+}
+{
+  "round": 52,
+  "round_label": "",
+  "start": "2027-03-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Malmö Redhawks",
+  "away": "Björklöven"
+}
+{
+  "round": 52,
+  "round_label": "",
+  "start": "2027-03-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Skellefteå AIK",
+  "away": "Timrå IK"
+}
+{
+  "round": 52,
+  "round_label": "",
+  "start": "2027-03-16T18:00:00.000Z",
+  "state": "pre-game",
+  "home": "Brynäs IF",
+  "away": "Frölunda HC"
+}
